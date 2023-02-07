@@ -16,8 +16,6 @@ pipeline {
 		credentialsId: 'rosaldogarcia',
 		url: 'git@github.com:rosaldogarcia/sample-merge.git'  
                 sh "ls -ltr"
-		sh "git checkout main"
-		sh "git pull main"
 		sh "git checkout dev"
 		sh "git pull"
 		sh "git merge origin/main"
