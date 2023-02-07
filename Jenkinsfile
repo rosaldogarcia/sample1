@@ -10,9 +10,12 @@ pipeline {
 		sh "ls -ltr" 
 	   }
 	}
-        stage('Build') {
+        stage('Checkout sample-merge project') {
             steps {
-                echo 'Building..'
+		git branch: 'main',
+		credentialsId: 'rosaldogarcia',
+		url: 'git@github.com:rosaldogarcia/sample-merge.git'  
+                sh "ls -ltr"
             }
         }
         stage('Test') {
